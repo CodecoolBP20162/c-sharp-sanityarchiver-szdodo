@@ -21,23 +21,19 @@ namespace SanityArchiver
     /// </summary>
     public partial class MainWindow : Window
     {
+        static DirectoryDisplay display;
+
         public MainWindow()
         {
             InitializeComponent();
+            display = new DirectoryDisplay(LibraryView, PathLabel);
         }
+
+       
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var item = new TreeViewItem();
-            item.Header = "kak";
-            LibraryView.Items.Add(item);
-            var item2 = new TreeViewItem();
-            item2.Header = "kk";
-            LibraryView.Items.Add(item2);
-            var item3 = new TreeViewItem();
-            item3.Header = "kaaak";
-            item.Items.Add(item3);
-            DirectoryDisplay display = new DirectoryDisplay(lb);
+            //display = new DirectoryDisplay(LibraryView);
         }
 
 
@@ -50,6 +46,24 @@ namespace SanityArchiver
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Item_DoubleClick(object sender, RoutedEventArgs e)
+        {
+            //display.AddFiles(FileBrowser, LibraryView.SelectedItem.GetType());
+            TreeViewItem item = (TreeViewItem)LibraryView.SelectedItem;
+            //PathLabel.Content = item.Header.ToString();
+            display.AddFiles(FileBrowser, item);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            display.Back(FileBrowser);
         }
     }
 }

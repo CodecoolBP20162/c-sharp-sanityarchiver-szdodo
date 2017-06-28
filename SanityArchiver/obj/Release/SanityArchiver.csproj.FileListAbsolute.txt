@@ -1,0 +1,14 @@
+C:\Users\Dodo\Source\Repos\c-sharp-sanityarchiver-szdodo\SanityArchiver\bin\Release\SanityArchiver.exe.config
+C:\Users\Dodo\Source\Repos\c-sharp-sanityarchiver-szdodo\SanityArchiver\bin\Release\SanityArchiver.exe
+C:\Users\Dodo\Source\Repos\c-sharp-sanityarchiver-szdodo\SanityArchiver\bin\Release\SanityArchiver.pdb
+C:\Users\Dodo\Source\Repos\c-sharp-sanityarchiver-szdodo\SanityArchiver\obj\Release\SanityArchiver.csprojResolveAssemblyReference.cache
+C:\Users\Dodo\Source\Repos\c-sharp-sanityarchiver-szdodo\SanityArchiver\obj\Release\MainWindow.g.cs
+C:\Users\Dodo\Source\Repos\c-sharp-sanityarchiver-szdodo\SanityArchiver\obj\Release\App.g.cs
+C:\Users\Dodo\Source\Repos\c-sharp-sanityarchiver-szdodo\SanityArchiver\obj\Release\SanityArchiver_MarkupCompile.cache
+C:\Users\Dodo\Source\Repos\c-sharp-sanityarchiver-szdodo\SanityArchiver\obj\Release\SanityArchiver_MarkupCompile.lref
+C:\Users\Dodo\Source\Repos\c-sharp-sanityarchiver-szdodo\SanityArchiver\obj\Release\MainWindow.baml
+C:\Users\Dodo\Source\Repos\c-sharp-sanityarchiver-szdodo\SanityArchiver\obj\Release\SanityArchiver.g.resources
+C:\Users\Dodo\Source\Repos\c-sharp-sanityarchiver-szdodo\SanityArchiver\obj\Release\SanityArchiver.Properties.Resources.resources
+C:\Users\Dodo\Source\Repos\c-sharp-sanityarchiver-szdodo\SanityArchiver\obj\Release\SanityArchiver.csproj.GenerateResource.Cache
+C:\Users\Dodo\Source\Repos\c-sharp-sanityarchiver-szdodo\SanityArchiver\obj\Release\SanityArchiver.exe
+C:\Users\Dodo\Source\Repos\c-sharp-sanityarchiver-szdodo\SanityArchiver\obj\Release\SanityArchiver.pdb
