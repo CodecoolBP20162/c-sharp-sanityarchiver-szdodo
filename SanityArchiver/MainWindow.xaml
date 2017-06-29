@@ -12,26 +12,26 @@
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="44*"/>
         </Grid.ColumnDefinitions>
-        <TextBox Margin="158,45,81,0" TextWrapping="Wrap" Text="Search&#xD;&#xA;" TextChanged="TextBox_TextChanged" Height="23" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox Name="SearchTxt" Margin="158,45,81,0" TextWrapping="Wrap" Text="Search&#xD;&#xA;" TextChanged="TextBox_TextChanged" Height="23" VerticalAlignment="Top" Grid.Column="1"/>
         <Menu Height="30" VerticalAlignment="Top" Grid.ColumnSpan="2">
-            <MenuItem Header="Edit" Height="30" Width="90">
-                <MenuItem Header="Compress" Height="30" Click="MenuItem_Click" Margin="0,0,-23,0"/>
+            <MenuItem Name="EditBtn" Header="Edit" Height="30" Width="90">
+                <MenuItem Name="CompressBtn" Header="Compress" Height="30" Click="CompressBtn_Click" Margin="0,0,-23,0"/>
                 <Separator HorizontalAlignment="Left" Width="119"/>
-                <MenuItem Header="Crypt" Height="23"/>
+                <MenuItem Name="CryptBtn" Header="Crypt" Height="23" Click="CryptBtn_Click"/>
                 <Separator HorizontalAlignment="Left" Width="119"/>
-                <MenuItem Header="Modify" HorizontalAlignment="Left" Height="26" Width="145"/>
+                <MenuItem Name="ModifyBtn" Header="Modify" HorizontalAlignment="Left" Height="26" Width="145" Click="ModifyBtn_Click"/>
             </MenuItem>
             <MenuItem Header="Help" Height="30" Width="100"/>
         </Menu>
         <TreeView Name="LibraryView" Margin="19,72,0,38" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="155"  MouseDoubleClick="Item_DoubleClick"  />
 
 
-        <Button Content="Search" Grid.Column="1" Margin="0,44,10,0" VerticalAlignment="Top" Height="23" RenderTransformOrigin="1.051,0.565" HorizontalAlignment="Right" Width="59" Click="Button_Click"/>
-        <Label  Name ="PathLabel" Content="Current Path:" HorizontalAlignment="Left" Margin="19,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.211,-0.038" Grid.ColumnSpan="2" Width="155"/>
+        <Button Name="SearchBtn" Content="Search" Grid.Column="1" Margin="0,44,10,0" VerticalAlignment="Top" Height="23" RenderTransformOrigin="1.051,0.565" HorizontalAlignment="Right" Width="59" Click="SearchBtn_Click"/>
+        <Label  Name ="PathLabel" Content="Current Directories:" HorizontalAlignment="Left" Margin="19,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.211,-0.038" Grid.ColumnSpan="2" Width="155"/>
         <WebBrowser Name="FileBrowser" Grid.Column="1" Margin="158,103,12,38"/>
         <Button Name="BackBtn" Content="Back" Grid.Column="1" HorizontalAlignment="Left" Margin="158,76,0,0" VerticalAlignment="Top" Width="75" Click="BackBtn_Click"/>
-        <Button Name="ForwardBtn" Content="Forward" Grid.Column="1" HorizontalAlignment="Left" Margin="255,76,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Name="HomeBtn" Content="Home" Grid.Column="1" HorizontalAlignment="Left" Margin="365,76,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="ForwardBtn" Content="Forward" Grid.Column="1" HorizontalAlignment="Left" Margin="255,76,0,0" VerticalAlignment="Top" Width="75" Click="ForwardBtn_Click"/>
+        <Button Name="HomeBtn" Content="Home" Grid.Column="1" HorizontalAlignment="Left" Margin="365,76,0,0" VerticalAlignment="Top" Width="75" Click="HomeBtn_Click"/>
 
     </Grid>
 </Window>

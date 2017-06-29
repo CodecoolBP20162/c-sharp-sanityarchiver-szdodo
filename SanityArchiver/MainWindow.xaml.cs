@@ -26,14 +26,14 @@ namespace SanityArchiver
         public MainWindow()
         {
             InitializeComponent();
-            display = new DirectoryDisplay(LibraryView, PathLabel);
+            display = new DirectoryDisplay(LibraryView, FileBrowser, SearchTxt);
+            display.DisplayDirectoryTreeView();
         }
-
        
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //display = new DirectoryDisplay(LibraryView);
+            display.Home();
         }
 
 
@@ -43,27 +43,54 @@ namespace SanityArchiver
             //show a default structure on open
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void CompressBtn_Click(object sender, RoutedEventArgs e)
+        {
+            TreeViewItem item = (TreeViewItem)LibraryView.SelectedItem;
+            if (item is null)
+            {
+                MessageBox.Show("First Select an item from the Currenct Directories list.");
+            }
+            else
+            {
+                display.ComprassFile(item);
+            }
+        }
+
+        private void CryptBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ModifyBtn_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
         private void Item_DoubleClick(object sender, RoutedEventArgs e)
         {
-            //display.AddFiles(FileBrowser, LibraryView.SelectedItem.GetType());
             TreeViewItem item = (TreeViewItem)LibraryView.SelectedItem;
-            //PathLabel.Content = item.Header.ToString();
-            display.AddFiles(FileBrowser, item);
+            display.LoadBrowser(item);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            string NewPath = SearchTxt.Text;
+            display.LoadBrowser(NewPath);
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            display.Back(FileBrowser);
+            display.Back();
+        }
+
+        private void ForwardBtn_Click(object sender, RoutedEventArgs e)
+        {
+            display.Forward();
+        }
+
+        private void HomeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            display.Home();
         }
     }
 }
