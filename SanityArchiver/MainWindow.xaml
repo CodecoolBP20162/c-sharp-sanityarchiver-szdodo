@@ -17,7 +17,8 @@
             <MenuItem Name="EditBtn" Header="Edit" Height="30" Width="100" VerticalAlignment="Center" VerticalContentAlignment="Center">
                 <MenuItem Name="CompressBtn" Header="Compress" Height="23" Click="CompressBtn_Click" Background="Beige"/>
                 <MenuItem Name="DecompressBtn" Header="Decompress" Height="23" Click="DecompressBtn_Click" Background="Beige"/>
-                <MenuItem Name="CryptBtn" Header="Crypt" Height="23" Click="CryptBtn_Click" Background="Beige"/>
+                <MenuItem Name="CryptBtn" Header="Encrypt" Height="23" Click="CryptMenu_Click" Background="Beige"/>
+                <MenuItem Name="DeCryptBtn" Header="Decrypt" Height="23" Click="DeCryptMenu_Click" Background="Beige"/>
                 <MenuItem Name="ModifyBtn" Header="Modify" HorizontalAlignment="Left" Height="23" Click="ModifyBtn_Click" Background="Beige" Margin="0,0,-2,0" Width="157"/>
             </MenuItem>
             <MenuItem Header="Help" Height="30" Width="100"/>
@@ -35,6 +36,8 @@
         <TextBox Name="OldNameTxt" Text="Old Name" Visibility="Hidden" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,10" TextWrapping="Wrap" Width="163" Height="23" VerticalAlignment="Bottom"/>
         <TextBox Name="NewNameTxt" Text="New Name" Visibility="Hidden" Grid.Column="1" HorizontalAlignment="Left" Margin="194,0,0,10" TextWrapping="Wrap" Width="168" Height="23" VerticalAlignment="Bottom"/>
         <Button Content="Rename" Name="RenameBtn" Visibility="Hidden" Grid.Column="1" Margin="397,0,0,10" Background="Beige"  Click="RenameBtn_Click" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75"/>
+        <Button Content="Encrypt" Name="EncryptBtn" Visibility="Hidden" Grid.Column="1" Margin="397,0,0,10" Background="Beige"  Click="EncryptBtn_Click" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75"/>
+        <Button Content="Dencrypt" Name="DecryptBtn" Visibility="Hidden" Grid.Column="1" Margin="397,0,0,10" Background="Beige"  Click="DecryptBtn_Click" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75"/>
 
     </Grid>
 </Window>

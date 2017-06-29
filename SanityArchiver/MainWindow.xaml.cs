@@ -40,6 +40,7 @@ namespace SanityArchiver
 
         private void CompressBtn_Click(object sender, RoutedEventArgs e)
         {
+            HideAllElements();
             TreeViewItem item = (TreeViewItem)LibraryView.SelectedItem;
             if (item is null)
             {
@@ -54,6 +55,7 @@ namespace SanityArchiver
 
         private void DecompressBtn_Click(object sender, RoutedEventArgs e)
         {
+            HideAllElements();
             TreeViewItem item = (TreeViewItem)LibraryView.SelectedItem;
             if (item is null)
             {
@@ -66,19 +68,62 @@ namespace SanityArchiver
             }
         }
 
-        private void CryptBtn_Click(object sender, RoutedEventArgs e)
+        private void CryptMenu_Click(object sender, RoutedEventArgs e)
         {
+            HideAllElements();
+            OldNameTxt.Visibility = Visibility.Visible;
+            OldNameTxt.Text = "File Name";
+            EncryptBtn.Visibility = Visibility.Visible;
+            string Path = handler.GetPathFromBrowser(FileBrowser);
+            display.DisplaySelectedDirectory(Path);
+        }
 
+        private void EncryptBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string Path = handler.GetPathFromBrowser(FileBrowser);
+            string OldName = Path + "\\" + OldNameTxt.Text;
+            if (OldName is null)
+            {
+                MessageBox.Show("Missing file name.");
+            }
+            handler.EncryptFile(Path, OldName);
+            OldNameTxt.Visibility = Visibility.Hidden;
+            EncryptBtn.Visibility = Visibility.Hidden;
+        }
+
+        private void DeCryptMenu_Click(object sender, RoutedEventArgs e)
+        {
+            HideAllElements();
+            OldNameTxt.Visibility = Visibility.Visible;
+            OldNameTxt.Text = "File Name";
+            DecryptBtn.Visibility = Visibility.Visible;
+            string Path = handler.GetPathFromBrowser(FileBrowser);
+            display.DisplaySelectedDirectory(Path);
+        }
+
+        private void DecryptBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string Path = handler.GetPathFromBrowser(FileBrowser);
+            string OldName = Path + "\\" + OldNameTxt.Text;
+            if (OldName is null)
+            {
+                MessageBox.Show("Missing file name.");
+            }
+            handler.DecryptFile(Path, OldName);
+            OldNameTxt.Visibility = Visibility.Hidden;
+            DecryptBtn.Visibility = Visibility.Hidden;
         }
 
         private void ModifyBtn_Click(object sender, RoutedEventArgs e)
         {
+            HideAllElements();
             OldNameTxt.Visibility = Visibility.Visible;
             NewNameTxt.Visibility = Visibility.Visible;
             RenameBtn.Visibility = Visibility.Visible;
             string Path = handler.GetPathFromBrowser(FileBrowser);
             display.DisplaySelectedDirectory(Path);
         }
+
         private void RenameBtn_Click(object sender, RoutedEventArgs e)
         {
             string Path = handler.GetPathFromBrowser(FileBrowser);
@@ -86,12 +131,10 @@ namespace SanityArchiver
             string NewName = Path + "\\" + NewNameTxt.Text;
             if (OldName is null|| NewName is null)
             {
-                MessageBox.Show("The files are neede.");
+                MessageBox.Show("Missing file names.");
             }
             handler.RenameFile(OldName, NewName);
-            OldNameTxt.Visibility = Visibility.Hidden;
-            NewNameTxt.Visibility = Visibility.Hidden;
-            RenameBtn.Visibility = Visibility.Hidden;
+            HideAllElements();
         }
 
 
@@ -126,6 +169,15 @@ namespace SanityArchiver
         {
             string Path = handler.GetPathFromBrowser(FileBrowser);
             display.DisplaySelectedDirectory(Path);
+        }
+
+        private void HideAllElements()
+        {
+            OldNameTxt.Visibility = Visibility.Hidden;
+            NewNameTxt.Visibility = Visibility.Hidden;
+            RenameBtn.Visibility = Visibility.Hidden;
+            EncryptBtn.Visibility = Visibility.Hidden;
+            DecryptBtn.Visibility = Visibility.Hidden;
         }
     }
 }
