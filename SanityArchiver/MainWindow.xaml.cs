@@ -22,12 +22,14 @@ namespace SanityArchiver
     public partial class MainWindow : Window
     {
         static DirectoryDisplay display;
+        static FileHandler handler;
 
         public MainWindow()
         {
             InitializeComponent();
             display = new DirectoryDisplay(LibraryView, FileBrowser, SearchTxt);
             display.DisplayDirectoryTreeView();
+            handler = new FileHandler();
         }
        
         //minden funnkciónak külön class, pls compress vagy ezek együtt egy, de ne a displayben!
@@ -41,12 +43,12 @@ namespace SanityArchiver
             TreeViewItem item = (TreeViewItem)LibraryView.SelectedItem;
             if (item is null)
             {
-                string Path=display.GetPathFromBrowser();
-                display.CompressFile(Path);
+                string Path=handler.GetPathFromBrowser(FileBrowser);
+                handler.CompressFile(Path);
             }
             else
             {
-                display.CompressFile(item);
+                handler.CompressFile(item);
             }
         }
 
@@ -55,12 +57,12 @@ namespace SanityArchiver
             TreeViewItem item = (TreeViewItem)LibraryView.SelectedItem;
             if (item is null)
             {
-                string Path = display.GetPathFromBrowser();
-                display.DecompressFile(Path);
+                string Path = handler.GetPathFromBrowser(FileBrowser);
+                handler.DecompressFile(Path);
             }
             else
             {
-                display.DecompressFile(item);
+                handler.DecompressFile(item);
             }
         }
 
@@ -74,19 +76,19 @@ namespace SanityArchiver
             OldNameTxt.Visibility = Visibility.Visible;
             NewNameTxt.Visibility = Visibility.Visible;
             RenameBtn.Visibility = Visibility.Visible;
-            string Path = display.GetPathFromBrowser();
+            string Path = handler.GetPathFromBrowser(FileBrowser);
             display.DisplaySelectedDirectory(Path);
         }
         private void RenameBtn_Click(object sender, RoutedEventArgs e)
         {
-            string Path = display.GetPathFromBrowser();
+            string Path = handler.GetPathFromBrowser(FileBrowser);
             string OldName = Path + "\\" + OldNameTxt.Text;
             string NewName = Path + "\\" + NewNameTxt.Text;
             if (OldName is null|| NewName is null)
             {
                 MessageBox.Show("The files are neede.");
             }
-            display.RenameFile(OldName, NewName);
+            handler.RenameFile(OldName, NewName);
             OldNameTxt.Visibility = Visibility.Hidden;
             NewNameTxt.Visibility = Visibility.Hidden;
             RenameBtn.Visibility = Visibility.Hidden;
@@ -122,7 +124,7 @@ namespace SanityArchiver
 
         private void InfoBtn_Click(object sender, RoutedEventArgs e)
         {
-            string Path = display.GetPathFromBrowser();
+            string Path = handler.GetPathFromBrowser(FileBrowser);
             display.DisplaySelectedDirectory(Path);
         }
     }
