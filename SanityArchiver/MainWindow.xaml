@@ -12,26 +12,29 @@
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="44*"/>
         </Grid.ColumnDefinitions>
-        <TextBox Name="SearchTxt" Margin="158,45,81,0" TextWrapping="Wrap" Text="Search&#xD;&#xA;" TextChanged="TextBox_TextChanged" Height="23" VerticalAlignment="Top" Grid.Column="1"/>
-        <Menu Height="30" VerticalAlignment="Top" Grid.ColumnSpan="2">
-            <MenuItem Name="EditBtn" Header="Edit" Height="30" Width="90">
-                <MenuItem Name="CompressBtn" Header="Compress" Height="30" Click="CompressBtn_Click" Margin="0,0,-23,0"/>
-                <Separator HorizontalAlignment="Left" Width="119"/>
-                <MenuItem Name="CryptBtn" Header="Crypt" Height="23" Click="CryptBtn_Click"/>
-                <Separator HorizontalAlignment="Left" Width="119"/>
-                <MenuItem Name="ModifyBtn" Header="Modify" HorizontalAlignment="Left" Height="26" Width="145" Click="ModifyBtn_Click"/>
+        <TextBox Name="SearchTxt" Margin="158,45,81,0" TextWrapping="Wrap" Text="Search&#xD;&#xA;" Height="23" VerticalAlignment="Top" Grid.Column="1"/>
+        <Menu Height="30" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="Moccasin" >
+            <MenuItem Name="EditBtn" Header="Edit" Height="30" Width="100" VerticalAlignment="Center" VerticalContentAlignment="Center">
+                <MenuItem Name="CompressBtn" Header="Compress" Height="23" Click="CompressBtn_Click" Background="Beige"/>
+                <MenuItem Name="DecompressBtn" Header="Decompress" Height="23" Click="DecompressBtn_Click" Background="Beige"/>
+                <MenuItem Name="CryptBtn" Header="Crypt" Height="23" Click="CryptBtn_Click" Background="Beige"/>
+                <MenuItem Name="ModifyBtn" Header="Modify" HorizontalAlignment="Left" Height="23" Click="ModifyBtn_Click" Background="Beige" Margin="0,0,-2,0" Width="157"/>
             </MenuItem>
             <MenuItem Header="Help" Height="30" Width="100"/>
         </Menu>
         <TreeView Name="LibraryView" Margin="19,72,0,38" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="155"  MouseDoubleClick="Item_DoubleClick"  />
 
 
-        <Button Name="SearchBtn" Content="Search" Grid.Column="1" Margin="0,44,10,0" VerticalAlignment="Top" Height="23" RenderTransformOrigin="1.051,0.565" HorizontalAlignment="Right" Width="59" Click="SearchBtn_Click"/>
+        <Button Name="SearchBtn" Content="Search" Background="Beige" Grid.Column="1" Margin="0,44,10,0" VerticalAlignment="Top" Height="23" RenderTransformOrigin="1.051,0.565" HorizontalAlignment="Right" Width="59" Click="SearchBtn_Click"/>
         <Label  Name ="PathLabel" Content="Current Directories:" HorizontalAlignment="Left" Margin="19,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.211,-0.038" Grid.ColumnSpan="2" Width="155"/>
         <WebBrowser Name="FileBrowser" Grid.Column="1" Margin="158,103,12,38"/>
-        <Button Name="BackBtn" Content="Back" Grid.Column="1" HorizontalAlignment="Left" Margin="158,76,0,0" VerticalAlignment="Top" Width="75" Click="BackBtn_Click"/>
-        <Button Name="ForwardBtn" Content="Forward" Grid.Column="1" HorizontalAlignment="Left" Margin="255,76,0,0" VerticalAlignment="Top" Width="75" Click="ForwardBtn_Click"/>
-        <Button Name="HomeBtn" Content="Home" Grid.Column="1" HorizontalAlignment="Left" Margin="365,76,0,0" VerticalAlignment="Top" Width="75" Click="HomeBtn_Click"/>
+        <Button Name="BackBtn" Content="Back" Background="Beige" Grid.Column="1" HorizontalAlignment="Left" Margin="158,76,0,0" VerticalAlignment="Top" Width="56" Click="BackBtn_Click" RenderTransformOrigin="0.813,0.682"/>
+        <Button Name="ForwardBtn" Content="Forward" Background="Beige" Grid.Column="1" HorizontalAlignment="Left" Margin="235,76,0,0" VerticalAlignment="Top" Width="58" Click="ForwardBtn_Click"/>
+        <Button Name="HomeBtn" Content="Home" Background="Beige" Grid.Column="1" HorizontalAlignment="Left" Margin="328,76,0,0" VerticalAlignment="Top" Width="75" Click="HomeBtn_Click"/>
+        <Button Name="InfoBtn" Content="Info" Background="Beige" Grid.Column="1" HorizontalAlignment="Left" Margin="422,76,0,0" VerticalAlignment="Top" Width="50" Click="InfoBtn_Click"/>
+        <TextBox Name="OldNameTxt" Text="Old Name" Visibility="Hidden" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,10" TextWrapping="Wrap" Width="163" Height="23" VerticalAlignment="Bottom"/>
+        <TextBox Name="NewNameTxt" Text="New Name" Visibility="Hidden" Grid.Column="1" HorizontalAlignment="Left" Margin="194,0,0,10" TextWrapping="Wrap" Width="168" Height="23" VerticalAlignment="Bottom"/>
+        <Button Content="Rename" Name="RenameBtn" Visibility="Hidden" Grid.Column="1" Margin="397,0,0,10" Background="Beige"  Click="RenameBtn_Click" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75"/>
 
     </Grid>
 </Window>
